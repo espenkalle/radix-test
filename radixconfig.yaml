@@ -52,6 +52,8 @@ spec:
        - name: http
          port: 3001
       public: true
+      clientCertificate:
+        verification: "on"
       environmentConfig:
         - environment: production
           variables:
