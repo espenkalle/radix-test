@@ -5,7 +5,7 @@
 # -- Base node image with app
 #
 # dockerhub.com - offical image
-FROM node:14.4-alpine
+FROM node:14.16.1-alpine
 # available: npm, apt, ..
 
 # Create app directory
