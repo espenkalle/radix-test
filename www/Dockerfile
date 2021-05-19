@@ -36,6 +36,7 @@ RUN npm audit
 FROM base as release
 WORKDIR /usr/src/app
 COPY --from=dependencies /usr/src/app/node_modules_production ./node_modules
+USER 1000
 EXPOSE 3001
 ENV NODE_ENV=production
 ENTRYPOINT [ "npm", "start"]
