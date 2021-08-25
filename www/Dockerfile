@@ -1,7 +1,7 @@
 #
 # -- Base node image with app
 #
-FROM node:14.16.1-alpine AS base
+FROM node:16-alpine AS base
 WORKDIR /usr/src/app
 COPY package.json package-lock.json app.js ./
 RUN mkdir -p ./bin ./routes
