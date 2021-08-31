@@ -5,7 +5,7 @@
 # -- Base node image with app
 #
 # dockerhub.com - offical image
-FROM node:14.16.1-alpine
+FROM node:16-alpine3.14
 # available: npm, apt, ..
 
 # Create app directory
@@ -21,6 +21,8 @@ RUN npm install --only=production
 
 # Bundle app source
 COPY . .
+
+USER 1000
 
 EXPOSE 3000
 # used by express
