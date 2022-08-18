@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: echo
+  name: radix-test-ek
 spec:
   environments:
     - name: production
@@ -9,7 +9,7 @@ spec:
         from: master
     - name: development
       build:
-        from: master
+        from: development
   components:
     - name: echo
       src: ./echo
