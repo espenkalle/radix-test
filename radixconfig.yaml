@@ -28,8 +28,8 @@ spec:
               memory: "200M"
               cpu: "100m"
             limits:
-              memory: "200M"
-              cpu: "100m"
+              memory: "500M"
+              cpu: "200m"
           replicas: 2
         - environment: development
           variables:
@@ -38,11 +38,11 @@ spec:
           monitoring: true
           resources:
             requests:
-              memory: "20M"
-              cpu: "100m"
-            limits:
               memory: "200M"
               cpu: "100m"
+            limits:
+              memory: "500M"
+              cpu: "200m"
           replicas: 2
      # secrets:
       # - MY_SUPER_SECRET
@@ -63,11 +63,11 @@ spec:
           monitoring: false
           resources:
             requests:
-                memory: "20M"
-                cpu: "100m"
-              limits:
-                memory: "200M"
-                cpu: "1000m"
+              memory: "500M"
+              cpu: "100m"
+            limits:
+              memory: "540M"
+              cpu: "200m"
           replicas: 1
         - environment: development
           variables:
@@ -77,11 +77,12 @@ spec:
           monitoring: false
           resources:
             requests:
-                memory: "20M"
-                cpu: "100m"
-              limits:
-                memory: "200M"
-                cpu: "1000m"
+              memory: "500M"
+              cpu: "100m"
+            limits:
+              memory: "540M"
+              cpu: "200m"
+          replicas: 1
   dnsAppAlias:
     environment: development
     component: www
