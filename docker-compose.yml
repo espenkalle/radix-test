@@ -1,6 +1,6 @@
 version: '3'
 services:
-  www:
+  www: 
     build: ./www
     ports:
      - "3001:3001"
