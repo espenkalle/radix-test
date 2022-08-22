@@ -14,6 +14,7 @@ var echoOptions = {
     time:true
 };
 
+
 router.get('/quote', function(req, res, next) {
 
     console.log('Preparing for getting Echo data from ', echoUrl+"/quote");
