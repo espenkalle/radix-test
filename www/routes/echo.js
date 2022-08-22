@@ -17,8 +17,8 @@ var echoOptions = {
 
 router.get('/quote', function(req, res, next) {
 
-    console.log('Preparing for getting Echo data from ', echoUrl+"/quote");
-    echoOptions.url = echoUrl+"/quote";
+    console.log('Preparing for getting Echo data from ', echoUrl+'/quote');
+    echoOptions.url = echoUrl+'/quote';
     request.get(echoOptions, function (error, response, body) {
 
         if (!error && response.statusCode >= 200 && response.statusCode <= 399) {
