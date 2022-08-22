@@ -14,10 +14,40 @@ var echoOptions = {
     time:true
 };
 
+router.get('/quote', function(req, res, next) {
+
+    console.log('Preparing for getting Echo data from ', echoUrl+"/quote");
+    echoOptions.url = echoUrl+"/quote";
+    request.get(echoOptions, function (error, response, body) {
+
+        if (!error && response.statusCode >= 200 && response.statusCode <= 399) {
+        
+            console.log('Got response from echo: ' + body);
+
+            var bodyObj = JSON.parse(body);
+            var echoObject = {};
+            echoObject.val = (bodyObj.val || 'No milk today');
+
+            res.render('quote', { title: 'Quote', echoObject });
+
+        } else {
+
+            console.log('Error getting echo information : ', error);
+            next(createError(500));
+            // res.status(500).send('Bad things happend');
+        }
+      
+    });
+
+
+});
+
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
     console.log('Preparing for getting Echo data from ', echoUrl);
+    echoOptions.url = echoUrl;
     request.get(echoOptions, function (error, response, body) {
 
         if (!error && response.statusCode >= 200 && response.statusCode <= 399) {
